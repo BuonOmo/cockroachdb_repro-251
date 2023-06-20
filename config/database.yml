@@ -1,0 +1,17 @@
+default: &default
+  primary:
+    adapter: postgresql
+    database: foo
+  other:
+    adapter: cockroachdb
+    database: bar
+    port: 26257
+    host: localhost
+    user: root
+
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
